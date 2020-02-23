@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
@@ -31,7 +32,10 @@ class GameController extends Controller
 
     public function create()
     {
-        return view('games.create');
+
+        $companies = Company::all();
+
+        return view('games.create', compact('companies'));
     }
 
     public function store()
@@ -65,7 +69,9 @@ class GameController extends Controller
 
     public function edit(Game $game)
     {
-        return view('games.edit', ['game' => $game]);
+        $companies = Company::all();
+
+        return view('games.edit', ['game' => $game], compact('companies'));
     }
 
     public function update(Game $game)

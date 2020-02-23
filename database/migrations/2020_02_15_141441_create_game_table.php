@@ -19,7 +19,7 @@ class CreateGameTable extends Migration
             $table->string('name')->unique();
             $table->string('genre');
             $table->string('platform');
-            $table->string('company');
+            //$table->string('company');
             $table->integer('release');
 
             $table->timestamps();

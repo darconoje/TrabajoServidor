@@ -21,6 +21,7 @@
         </tr>
         </thead>
         <tbody>
+@if (Auth::user()->isAdmin())             
         @foreach($games as $game)
         <tr>
             <th scope="row">{{ $game->id }}</th>
@@ -37,6 +38,22 @@
             </td>
         </tr>
         @endforeach
+@else
+        @foreach($games as $game)
+        <tr>
+            <th scope="row">{{ $game->id }}</th>
+            <td>{{ $game->name }}</td>
+            <td>{{ $game->genre }}</td>
+            <td>
+                <form action="{{ route('noadmin') }}" method="POST">
+                    <a href="{{ route('games.show', $game) }}" class="btn btn-link"><span class="oi oi-eye"></span></a>
+                    <a href="{{ route('games.edit', $game) }}" class="btn btn-link"><span class="oi oi-pencil"></span></a>
+                    <button type="submit" class="btn btn-link"><span class="oi oi-trash"></span></button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+@endif        
         </tbody>
     </table>
     @else

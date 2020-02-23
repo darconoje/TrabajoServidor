@@ -3,6 +3,7 @@
 @section('title', "Crear usuario")
 
 @section('content')
+@if(Auth::user()->isAdmin())
     <h1>Editar usuario</h1>
 
     @if ($errors->any())
@@ -35,4 +36,9 @@
     <p>
         <a href="{{ route('users.index') }}">Regresar al listado de usuarios</a>
     </p>
+@else
+<div>
+    <h1>Solo el administrador puede realizar funciones de crear, editar y eliminar</h1>
+</div> 
+@endif
 @endsection

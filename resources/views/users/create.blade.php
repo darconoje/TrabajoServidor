@@ -3,6 +3,7 @@
 @section('title', "Crear usuario")
 
 @section('content')
+@if(Auth::user()->isAdmin())
     <div class="card">
         <h4 class="card-header">Crear usuario</h4>
         <div class="card-body">
@@ -41,4 +42,9 @@
             </form>
         </div>
     </div>
+@else
+<div>
+    <h1>Solo el administrador puede realizar funciones de crear, editar y eliminar</h1>
+</div> 
+@endif
 @endsection

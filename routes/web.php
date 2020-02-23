@@ -2,6 +2,8 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::post('/noadmin', 'HomeController@noadmin')->name('noadmin');
+
 //usuarios
 
 Route::get('/usuarios', 'UserController@index')

@@ -3,6 +3,7 @@
 @section('title', "Crear videojuego")
 
 @section('content')
+@if(Auth::user()->isAdmin())
     <div class="card">
         <h4 class="card-header">Crear videojuego</h4>
         <div class="card-body">
@@ -38,7 +39,12 @@
 
                 <div class="form-group">
                     <label for="company">Empresa:</label>
-                    <input type="text" class="form-control" name="company" id="company" placeholder="" value="{{ old('company') }}">
+
+                    <select class="form-control" name="company" id="company">
+                    @foreach ($companies as $company)
+                        <option value="{{ $company->name }}">{{ $company->name }}</option>
+                    @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -51,4 +57,9 @@
             </form>
         </div>
     </div>
+@else
+<div>
+    <h1>Solo el administrador puede realizar funciones de crear, editar y eliminar</h1>
+</div> 
+@endif    
 @endsection

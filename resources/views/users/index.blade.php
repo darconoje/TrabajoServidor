@@ -21,6 +21,7 @@
         </tr>
         </thead>
         <tbody>
+@if (Auth::user()->isAdmin())            
         @foreach($users as $user)
         <tr>
             <th scope="row">{{ $user->id }}</th>
@@ -37,6 +38,22 @@
             </td>
         </tr>
         @endforeach
+@else
+        @foreach($users as $user)
+        <tr>
+            <th scope="row">{{ $user->id }}</th>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->email }}</td>
+            <td>
+                <form action="{{ route('noadmin') }}" method="POST">
+                    <a href="{{ route('users.show', $user) }}" class="btn btn-link"><span class="oi oi-eye"></span></a>
+                    <a href="{{ route('users.edit', $user) }}" class="btn btn-link"><span class="oi oi-pencil"></span></a>
+                    <button type="submit" class="btn btn-link"><span class="oi oi-trash"></span></button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+@endif        
         </tbody>
     </table>
     @else

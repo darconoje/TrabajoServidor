@@ -3,6 +3,7 @@
 @section('title', "Crear empresa")
 
 @section('content')
+@if(Auth::user()->isAdmin())
     <h1>Editar empresa</h1>
 
     @if ($errors->any())
@@ -41,4 +42,9 @@
     <p>
         <a href="{{ route('companies.index') }}">Regresar al listado de empresas</a>
     </p>
+@else
+<div>
+    <h1>Solo el administrador puede realizar funciones de crear editar y eliminar</h1>
+</div> 
+@endif    
 @endsection
