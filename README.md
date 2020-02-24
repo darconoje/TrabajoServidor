@@ -1,7 +1,7 @@
--La aplicacion hay que iniciarla tras crear el virtualhost con php artisan serve.
--La aplicacion no deja usar ninguna funcionalidad a no ser que estes logueado como usuario
--Se puede crear usuario dandole al link de registro
--Una vez logueado, a los usuarios normales solo les deja usar la funcionalidad de mostrar los elementos en la lista e indivualmente
--El correo de admin es dcondeojeda@gmail.com y la contraseña 123456789
--Se necesita estar logueado como administrador para usar las demas funcionalidades (editar,borrar y añadir)
--A la hora de completar los campos de los formularios hay que tener en cuenta las condiciones de la validacion (todos los campos son necesarios, hay algunas condiciones de expresiones regulares que deben cumplir, un tamaño minimo para las contraseñas...), aun así, a la hora de validar ese informa de las condiciones que no has cumplido al momento
+-La aplicacion hay que iniciarla tras crear el virtualhost con php artisan serve.  
+-La aplicacion no deja usar ninguna funcionalidad a no ser que estes logueado como usuario.  
+-Se puede crear usuario dandole al link de registro.  
+-Una vez logueado, a los usuarios normales solo les deja usar la funcionalidad de mostrar los elementos en la lista e indivualmente.  
+-El correo de admin es dcondeojeda@gmail.com y la contraseña 123456789.  
+-Se necesita estar logueado como administrador para usar las demas funcionalidades (editar,borrar y añadir).  
+-A la hora de completar los campos de los formularios hay que tener en cuenta las condiciones de la validacion (todos los campos son necesarios, hay algunas condiciones de expresiones regulares que deben cumplir, un tamaño minimo para las contraseñas...), aun así, a la hora de validar ese informa de las condiciones que no has cumplido al momento.  
